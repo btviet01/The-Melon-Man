@@ -22,19 +22,20 @@ game.drawStructure = function (name, x, y) {
 }
 
 game.drawPlayer = function () {
-	actualPlayerTile = game.player.animations[game.player.direction][game.player.animationFrameNumber % 4]
-	game.context.drawImage(
-		game.textures,
-		actualPlayerTile.tileColumn * game.options.tileWidth,
-		actualPlayerTile.tileRow * game.options.tileHeight,
-		game.options.tileWidth,
-		game.options.tileHeight,
-		Math.round(game.options.canvasWidth / 2 - game.options.tileWidth / 2),
-		Math.round(game.options.canvasHeight / 2 - game.options.tileHeight / 2),
-		game.options.tileWidth,
-		game.options.tileHeight
-	)
-}
+    var playerSize = game.options.tileWidth*0.7; 
+    var drawX = Math.round(game.options.canvasWidth / 2 - playerSize / 2);
+    var drawY = Math.round(game.options.canvasHeight / 2 - playerSize / 2);
+    game.context.fillStyle = "red";
+    game.context.fillRect(drawX, drawY, playerSize, playerSize);
+	game.context.fillStyle="black";
+	game.context.beginPath();
+	game.context.arc(drawX + playerSize *0.3, drawY+playerSize*0.3,playerSize*0.1,0,Math.PI*2);
+	game.context.fill();
+	game.context.beginPath();
+	game.context.arc(drawX + playerSize *0.7, drawY+playerSize*0.3,playerSize*0.1,0,Math.PI*2);
+	game.context.fill();
+};
+
 
 game.redraw = function () {
 	game.drawPending = false
@@ -92,6 +93,6 @@ game.requestRedraw = function () {
 		game.context.fillStyle = "black"
 		game.context.fillText("Game over!", game.canvas.width / 2, game.canvas.height / 2)
 		game.context.font = "15px Georgia"
-		game.context.fillText("(Refresh the page to restart)", game.canvas.width / 2, game.canvas.height / 2 + 50)
+		game.context.fillText("(Refresh the page to restart)", game.canvas.width / 2, game.canvas.height / 2 +50 )
 	}
 }

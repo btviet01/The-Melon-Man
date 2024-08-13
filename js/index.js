@@ -4,6 +4,7 @@ var game = {
 	context: this.canvas.getContext('2d', {alpha: false}),
 	counter: document.getElementById('counter'),
 	textures: new Image(),
+	newPlayerTexture: new Image(),
 	drawPending: false,
 	backgrounds: {
 			'sky': {
@@ -23,7 +24,7 @@ var game = {
 		tileWidth: 24,
 		tileHeight: 24,
 		canvasWidth: window.innerWidth / 3,
-		canvasHeight: window.innerHeight / 3
+		canvasHeight: window.innerHeight / 3,
 	},
 	pressedKeys: {},
 	init: function (onInit) {
@@ -46,5 +47,6 @@ var game = {
 	map: {
 		structures: []
 	},
-	isOver: false
+	score:0,
+	isOver: false,
 }
