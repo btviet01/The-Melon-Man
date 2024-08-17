@@ -5,7 +5,7 @@
 The goal is to jump through randomly-generated platforms and get as high as possible.
 Use space to jump, and A, D or arrows to move left / right.
 
-[> DEMO <](https://vietbt01.github.io/The-Melon-Man/)
+[> DEMO <](https://btviet01.github.io/The-Melon-Man/)
 
 # For contributors
 
